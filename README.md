@@ -4,9 +4,9 @@
 
 A simple wordle clone build with React,  use Wordnik's dictionary API for vocabulary.
 
-<img src="./wordle_game.png" alt="game" style="zoom:20%;" />
+<img src="./wordle_game.png" alt="game" width="300" />
 
-<img src="./wordle_statistics.png" alt="game" style="zoom:20%;" />
+<img src="./wordle_statistics.png" alt="game" width="300" />
 
 - #### Demo Link: TODO
 
