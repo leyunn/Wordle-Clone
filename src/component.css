@@ -1,0 +1,47 @@
+.restart{
+    height: 13px;
+    width: 40px;
+    margin-top: 6px;
+    margin-left: 10px;
+    margin-right: 50px;
+}
+
+.rank{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    height: 18px;
+    width: 20px;
+    position: relative;
+    margin-top: 15px;
+    margin-right: 40px;
+    cursor: pointer;
+
+}
+
+.rank1{
+   height: 8px;
+   left: 0;
+   position:absolute;
+   top: 6px;
+   width: 4px; 
+   border: 2px solid #565758;
+}
+
+.rank2{
+    height: 14px;
+    left: 6px;
+    position:absolute;
+    top: 0px;
+    width: 4px; 
+    border: 2px solid #565758;
+ }
+
+.rank3{
+    height: 6px;
+    left: 12px;
+    position:absolute;
+    top: 8px;
+    width: 4px; 
+    border: 2px solid #565758;
+ }

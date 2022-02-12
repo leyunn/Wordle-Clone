@@ -3,10 +3,32 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#538d4e'
+    },
+    secondary: {
+      main: '#3A3A3C'
+    }
+  },
+  // components: {
+  //   // Name of the component
+  //   MuiSnackbar: {
+  //     styleOverrides: {
+        
+  //     }
+  //   },
+  // },
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme} >
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
