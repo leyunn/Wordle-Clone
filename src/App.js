@@ -457,7 +457,7 @@ const App= ()=> {
         <div className='words'>
           {grid.map( (n,i) => 
             <div key={i} className='cellRow'>
-            {n.map((nn, j)=><div key={j} style={{borderColor: (i==cur[0] && j == cur[1])? "#565758":"#3a3a3c" }}  className={(nn.state==Empty)? "Empty": ((nn.state==Gray)? "Gray": ((nn.state==Yellow)? "Yellow": "Green"))} >{nn.letter}</div>
+            {n.map((nn, j)=><div key={j} style={{borderColor: (i==cur[0] && j == cur[1])? "#565758":"#3a3a3c" }}  className={`${(nn.state==Empty)? "Empty": ((nn.state==Gray)? "Gray": ((nn.state==Yellow)? "Yellow": "Green"))} ${(nn.state==Empty)? "":"flipin"} ${(nn.state==Empty)? "":"flipout"}`} >{nn.letter}</div>
             )}
             </div>
           )}

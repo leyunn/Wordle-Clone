@@ -210,6 +210,7 @@
   font-family: 'Yantramanav', sans-serif;
   text-align: center;
   cursor: pointer;
+
 }
 
 .Enterkey{
@@ -336,3 +337,31 @@
   justify-content: space-around;
   margin-top: 30px;
 }
+
+
+.flipin{
+  animation-name: flip-in;
+  animation-duration: 0.5s;
+}
+
+.flipout{
+  animation-name: flip-out;
+  animation-duration: 0.5s;
+}
+
+@keyframes flip-out {
+  from {transform: rotateX(-90deg);}
+  to {transform: rotateX(0);}
+}
+
+@keyframes flip-in {
+  from {transform: rotateX(0);}
+  to {transform: rotateX(-90deg);}
+}
+
+
+
+
+
+
+
