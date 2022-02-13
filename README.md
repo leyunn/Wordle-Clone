@@ -8,7 +8,7 @@ A simple wordle clone build with React,  use Wordnik's dictionary API for vocabu
 
 <img src="./wordle_statistics.png" alt="game" width="300" />
 
-- #### Demo Link: https://youtu.be/H5AtZ5ERRik
+- #### Demo Link: https://youtu.be/Cdw9_pRy6T8
 
 - #### What is the application about?
 
