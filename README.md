@@ -17,20 +17,19 @@ A simple wordle clone build with React,  use Wordnik's dictionary API for vocabu
   - Includes:
     - Recreating the exact UI (components, color, size, layout...)
     - Wordnik's API: to check if word exist
-    - save user's game statistics at localStorage
-    - Handle repeating letters.
-    - "Play Again" button for new game
+    - save user's game statistics
+    - Handle repeating letters
+    - "Play Again" button for new gam
+    - flip animation when guessing
+    - vibration animation when word doesn't exist
     - Copy to share result
   - Doesn't include:
-    - Jumpy word  Animation (TODO)
+    - Jumping word when hitting the answer
+    - Recover interrupted game (remember your game process)
 
 - #### What Framework/library did I use?
 
   React, material-ui, axios
 
 - #### Not deployed
-
-  
-
-  
 
