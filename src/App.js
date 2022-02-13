@@ -200,6 +200,15 @@ const App= ()=> {
     }
   }, [init])
 
+  useEffect(() => {
+    if(time == 1000){
+      const timer = setTimeout(() => {
+        settime(3000)
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [time])
+
   const keyPress = e=>{
     // console.log(e.key)
     if(e.key == "Backspace"){
@@ -219,6 +228,7 @@ const App= ()=> {
       window.removeEventListener("keydown", keyPress);
     };
   }, []);
+
 
   // useEffect(()=>{
   //   console.log(ans)
@@ -348,9 +358,11 @@ const App= ()=> {
         updatecur([curref.current[0]+1, -1]);
       }
     }).catch(err=>{
-      settime(1000)
-      setcompliment("Not in the word list");
-      setsnackopen(true);
+      if(clickableref.current && curref.current[0]<6 && curref.current[1]==4){
+        settime(1000)
+        setcompliment("Not in the word list");
+        setsnackopen(true);
+      }
     })
   }
 
@@ -457,7 +469,7 @@ const App= ()=> {
         <div className='words'>
           {grid.map( (n,i) => 
             <div key={i} className='cellRow'>
-            {n.map((nn, j)=><div key={j} style={{borderColor: (i==cur[0] && j == cur[1])? "#565758":"#3a3a3c" }}  className={`${(nn.state==Empty)? "Empty": ((nn.state==Gray)? "Gray": ((nn.state==Yellow)? "Yellow": "Green"))} ${(nn.state==Empty)? "":"flipin"} ${(nn.state==Empty)? "":"flipout"}`} >{nn.letter}</div>
+            {n.map((nn, j)=><div key={j} style={{borderColor: (i==cur[0] && j == cur[1])? "#565758":"#3a3a3c" }}  className={`${(nn.state==Empty)? "Empty": ((nn.state==Gray)? "Gray": ((nn.state==Yellow)? "Yellow": "Green"))} ${(nn.state==Empty)? "":"flipin"} ${(nn.state==Empty)? "":"flipout"} ${(time==1000 && i==cur[0])? "shaking":""}`} >{nn.letter}</div>
             )}
             </div>
           )}
