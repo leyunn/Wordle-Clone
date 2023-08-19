@@ -276,7 +276,7 @@ const App= ()=> {
       word = word.concat(tempgrid[curref.current[0]][i].letter.toLowerCase());
     }
     //check if word exist
-    axios.get(`https://api.wordnik.com/v4/word.json/${word}/definitions?limit=1&includeRelated=false&sourceDictionaries=all&useCanonical=true&includeTags=false&api_key=${process.env.REACT_APP_APIKEY}`)
+    axios.get(`https://verifyword-vfo6v3xs7a-uc.a.run.app?word=${word}`)
     .then(res => {
       for(let i = 0; i < 5; i++){
         for(let j = i + 1; j < 5; j++){
@@ -358,10 +358,17 @@ const App= ()=> {
         updatecur([curref.current[0]+1, -1]);
       }
     }).catch(err=>{
+      
       if(clickableref.current && curref.current[0]<6 && curref.current[1]==4){
-        settime(1000)
-        setcompliment("Not in the word list");
-        setsnackopen(true);
+        if(err?.response?.status==404){
+          settime(1000)
+          setcompliment("Not in the word list");
+          setsnackopen(true);
+        }else{
+          settime(1000)
+          setcompliment("Network error, please try again");
+          setsnackopen(true);
+        }
       }
     })
   }
