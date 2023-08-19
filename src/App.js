@@ -426,6 +426,7 @@ const App= ()=> {
               }} variant="contained" color="secondary" size="large" >play again</Button>
               <CopyToClipboard text={copytext}>
               <Button onClick={(n)=>{
+                if(copytextr.current == "") return;
                 settime(1500)
                 setcompliment("Copied to clipboard");
                 setsnackopen(true);
